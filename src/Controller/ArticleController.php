@@ -23,6 +23,7 @@ class ArticleController extends AbstractController
      */
     public function show($slug)
     {
+        //dump($slug, $this);
         //return new Response("Future page for article: {$slug}");
         $comments =[
             'I ate a normal rock once. It did NOT taste like bacon!',
@@ -31,7 +32,7 @@ class ArticleController extends AbstractController
         ];
 
         return $this->render('article/show.html.twig', [
-            'title' => ucwords(str_replace('-','', $slug)),
+            'title' => ucwords(str_replace('-',' ', $slug)),
             'comments' => $comments
         ]);
     }
